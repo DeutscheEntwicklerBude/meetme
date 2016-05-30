@@ -30,8 +30,7 @@ public class YoloAdmin {
     UserDao userDao;
     @Inject
     LecturerDao lecturerDao;
-    @Inject
-    ScoreDao scoreDao;
+
     @Inject
     UrgentAppointmentDao urgentAppointmentDao;
     @Inject
