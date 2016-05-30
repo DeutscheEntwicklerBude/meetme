@@ -59,7 +59,7 @@ public class UserService {
     return "TEST";
   }
 
-  @Path("/login")
+  /*@Path("/login")
   @GET
 
   public String login(@HeaderParam("Authorization") String authPara){
@@ -90,7 +90,7 @@ public class UserService {
     }
     return "false";
 
-  }
+  }*/
 
 
 
