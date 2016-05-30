@@ -10,8 +10,6 @@ import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
-import java.nio.charset.Charset;
-import java.util.Base64;
 import java.util.Collection;
 
 /**
