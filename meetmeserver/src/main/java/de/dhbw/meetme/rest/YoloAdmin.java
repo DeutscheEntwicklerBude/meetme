@@ -109,7 +109,9 @@ public class YoloAdmin {
     @GET
     @Path("/resetDatabase/{lecturerName}")
     public void resetDatabase(@PathParam("lecturerName") String lecturerName){
+        transaction.begin();
         urgentAppointmentDao.getOpenUrgentAppointment2(lecturerName).setProgressed(true);
+        transaction.commit();
 
     }
 
