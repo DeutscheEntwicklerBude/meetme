@@ -107,6 +107,13 @@ public class YoloAdmin {
     }
 
     @GET
+    @Path("/resetDatabase/{lecturerName}")
+    public void resetDatabase(@PathParam("lecturerName") String lecturerName){
+        urgentAppointmentDao.getOpenUrgentAppointment2(lecturerName).setProgressed(true);
+
+    }
+
+    @GET
     @Path("/availability/{setAvailability}/{lecturerName}")
     //set the availability ...boolean true for availabale or false for unavailable
     public boolean setAvailability(@PathParam("setAvailability") boolean availability,@PathParam("lecturerName") String lecturerName){
