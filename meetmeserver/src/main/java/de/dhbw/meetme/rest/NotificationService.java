@@ -78,7 +78,9 @@ public class NotificationService {
                 e.printStackTrace();
             }
             throw new WebApplicationException(Response.temporaryRedirect(location).build());
-    }}
+    }
+
+    }
     @GET
     @Path("/urgentApp/{lecturerName}")
     // returns the DB entry of outstanding notifications
@@ -183,7 +185,7 @@ public class NotificationService {
         }catch (Exception e) {
             e.printStackTrace();
         }
-
+        transaction.commit();
         throw new WebApplicationException(Response.temporaryRedirect(location).build());
     }
 
