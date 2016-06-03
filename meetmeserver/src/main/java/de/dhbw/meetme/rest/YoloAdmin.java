@@ -121,7 +121,6 @@ public class YoloAdmin {
             transaction.commit();
         }
 
-        transaction.commit();
 
     }
 
