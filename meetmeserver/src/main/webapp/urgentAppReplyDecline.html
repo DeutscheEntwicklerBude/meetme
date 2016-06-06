@@ -79,7 +79,7 @@
   $( document ).ready(function() {
     $("#message").html("Thank you for contacting Learning Support.<br> " + capitalizeFirstLetter(localStorage.getItem("advisorName").toString()) + " declined your request.");
 
-    intervalClient.open("GET", 'api/notification/AppReply/' = advisorName);
+    intervalClient.open("GET", 'api/notification/AppReply/' + lastname);
     intervalClient.onreadystatechange = function() {
       if (this.readyState == this.DONE) {
         document.getElementById("additionalMessag").innerHTML = this.response.toString();
