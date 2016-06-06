@@ -79,7 +79,7 @@
   $( document ).ready(function() {
     $("#message").html("Thank you for contacting Learning Support.<br> " + capitalizeFirstLetter(localStorage.getItem("advisorName").toString()) + " declined your request.");
 
-    intervalClient.open("GET", 'api/notification/AppReply/Greliche');
+    intervalClient.open("GET", 'api/notification/AppReply/' = advisorName);
     intervalClient.onreadystatechange = function() {
       if (this.readyState == this.DONE) {
         document.getElementById("additionalMessag").innerHTML = this.response.toString();
@@ -93,7 +93,7 @@
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
-  var accountName = localStorage.getItem("accountName").toString();
+  var accountName = localStorage.getItem("advisorName").toString();
   var src = "";
   var name = "";
   var lastname = "";
