@@ -33,7 +33,7 @@
         if (client.response.toString() == "false")
         {
           alert("false entered");
-          document.getElementById(name).style.visibility = "hidden";
+          document.getElementById(name).style.visibility = "none";
         }
         else {
           document.getElementById(name).style.visibility = "visible";
@@ -62,7 +62,7 @@
           if (this.response.toString() == "false")
           {
             //alert("false entered");
-            document.getElementById("Delante").style.visibility = "hidden";
+            document.getElementById("Delante").style.visibility = "collapse";
           }
           else {
             document.getElementById("Delante").style.visibility = "visible";
@@ -79,7 +79,7 @@
           if (this.response.toString() == "false")
           {
             //alert("false entered");
-            document.getElementById("Leng Toh Heng").style.visibility = "hidden";
+            document.getElementById("Leng Toh Heng").style.visibility = "collapse";
           }
           else {
             document.getElementById("Leng Toh Heng").style.visibility = "visible";
@@ -95,7 +95,7 @@
           if (this.response.toString() == "false")
           {
             //alert("false entered");
-            document.getElementById("Greliche").style.visibility = "hidden";
+            document.getElementById("Greliche").style.visibility = "collapse";
           }
           else {
             document.getElementById("Greliche").style.visibility = "visible";
@@ -110,7 +110,7 @@
           if (this.response.toString() == "false")
           {
             //alert("false entered");
-            document.getElementById("Joyce").style.visibility = "hidden";
+            document.getElementById("Joyce").style.visibility = "collapse";
           }
           else {
             document.getElementById("Joyce").style.visibility = "visible";
@@ -125,7 +125,7 @@
           if (this.response.toString() == "false")
           {
             //alert("false entered");
-            document.getElementById("Jacobs").style.visibility = "hidden";
+            document.getElementById("Jacobs").style.visibility = "collapse";
           }
           else {
             document.getElementById("Jacobs").style.visibility = "visible";
@@ -174,14 +174,14 @@
 <section>
   <div class="container special" >
     <div class="row text-center">
-      <div class="col-xs-4 col-xs-offset-1">
+      <div class="col-sm-4 col-sm-offset-1">
         <div class="jumbotron text-center" id="Leng Toh Heng"  onClick="showAppointmentType('hwee')">
         <img class="img-responsive img-rounded center-block" style="max-height:244px;" src="img/Hwee-Leng-Toh-Heng.jpg"/>
           <t class="text lead">Ms. Hwee Leng Toh-Heng</t><br/>
          <t class="text small">Learning Advisor</t>
         </div>
       </div>
-      <div class="col-xs-4 col-xs-offset-1">
+      <div class="col-sm-4 col-sm-offset-1">
         <div class="jumbotron text-center" id="Delante" onClick="showAppointmentType('nimrod')">
         <img class="img-responsive img-rounded center-block" style="max-height:244px;" src="img/n_delante.jpg"/>
           <t class="text lead">Mr. Nimrod Delante</t><br/>
@@ -191,13 +191,13 @@
     </div>
     
     <div class="row">
-      <div class="col-xs-4" >
+      <div class="col-sm-4" >
         <div class="jumbotron text-center" id="Greliche" onClick="showAppointmentType('nicolas')"> <img class="img-responsive img-rounded center-block" src="img/Nicolas-Greliche.jpg"/>
         <t class="text lead">Dr. Nicolas Greliche</t><br/>
          <t class="text small">Learning Advisor</t>
         </div>
       </div>
-      <div class="col-xs-4"> 
+      <div class="col-sm-4">
       <div class="jumbotron text-center" id="Jacobs" onClick="showAppointmentType('george')">
         <img class="img-responsive img-rounded center-block" style="max-height:244px;" src="img/George-Jacobs.jpg"/>
           <t class="text lead">Dr. George Jacobs</t><br/>
@@ -205,7 +205,7 @@
         </div>
       </div>
     
-      <div class="col-xs-4">
+      <div class="col-sm-4">
         <div class="jumbotron text-center" id="Joyce" onClick="showAppointmentType('michael')">
         <img class="img-responsive img-rounded center-block" style="max-height:244px;" src="img/Michael-Joyce.jpg"/>
           <t class="text lead">Mr. Michael James Joyce</t><br/>
@@ -219,7 +219,7 @@
 <footer class="text-center">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-sm-12">
         <p>Copyright © DEB - Deutsche Entwicklerbude. All rights reserved.</p>
       </div>
     </div>
