@@ -77,6 +77,7 @@ public class NotificationService {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            transaction.commit();
             throw new WebApplicationException(Response.temporaryRedirect(location).build());
     }
 
