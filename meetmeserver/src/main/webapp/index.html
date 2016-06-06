@@ -6,6 +6,135 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="icon" href="img/symbol.png"/>
 <title>Virtual Lobby</title>
+  <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+  <script>
+    var intervalClient = new XMLHttpRequest();
+    var nimrodClient = new XMLHttpRequest();
+    var michaelClient = new XMLHttpRequest();
+    var nicolasClient = new XMLHttpRequest();
+    var hweeClient = new XMLHttpRequest();
+    var georgeClient = new XMLHttpRequest();
+    var lecturers = ["Delante", "Greliche", "Joyce", "Jacobs", "Leng Toh Heng"];
+    var clients = [nimrodClient, nicolasClient, michaelClient, georgeClient, hweeClient];
+
+    function worker() {
+      for (i = 0; i < lecturers.length; i++)
+      {
+        clients[i].open("GET", 'api/lecturer/availability/' + lecturers[i].toString());
+        clients[i].onreadystatechange = stateChanged("Delante");
+        clients[i].send();
+
+
+      };
+    }
+
+    function stateChanged(client, name){
+      if (client.readyState === client.DONE) {
+        if (client.response.toString() == "false")
+        {
+          alert("false entered");
+          document.getElementById(name).style.visibility = "hidden";
+        }
+        else {
+          document.getElementById(name).style.visibility = "visible";
+        }
+      }
+      alert(name.toString() + ": " + this.response.toString());
+    };
+    $(document).ready(function() {
+      /*for (i = 0; i < lecturers.length; i++)
+      {
+        //alert(lecturers[i].toString() + ": " + clients[i].toString());
+        clients[i].open("GET", 'api/lecturer/availability/' + lecturers[i].toString());
+        clients[i].onreadystatechange = stateChanged(clients[i], lecturers[i]);
+        clients[i].send();
+
+        alert("request sent");
+
+      };*/
+
+      //alert("documentReadyFunction");
+
+      nimrodClient.open("GET", 'api/lecturer/availability/Delante');
+
+      nimrodClient.onreadystatechange = function() {
+        if (this.readyState === this.DONE) {
+          if (this.response.toString() == "false")
+          {
+            //alert("false entered");
+            document.getElementById("Delante").style.visibility = "hidden";
+          }
+          else {
+            document.getElementById("Delante").style.visibility = "visible";
+          }
+        }
+      };
+
+      nimrodClient.send();
+      //alert("nimrod sent");
+
+      hweeClient.open("GET", 'api/lecturer/availability/Leng Toh Heng');
+      hweeClient.onreadystatechange = function() {
+        if (this.readyState === this.DONE) {
+          if (this.response.toString() == "false")
+          {
+            //alert("false entered");
+            document.getElementById("Leng Toh Heng").style.visibility = "hidden";
+          }
+          else {
+            document.getElementById("Leng Toh Heng").style.visibility = "visible";
+          }
+        }
+      };
+      hweeClient.send();
+
+
+      nicolasClient.open("GET", 'api/lecturer/availability/Greliche');
+      nicolasClient.onreadystatechange = function() {
+        if (this.readyState === this.DONE) {
+          if (this.response.toString() == "false")
+          {
+            //alert("false entered");
+            document.getElementById("Greliche").style.visibility = "hidden";
+          }
+          else {
+            document.getElementById("Greliche").style.visibility = "visible";
+          }
+        }
+      };
+      nicolasClient.send();
+
+      michaelClient.open("GET", 'api/lecturer/availability/Joyce');
+      michaelClient.onreadystatechange = function() {
+        if (this.readyState === this.DONE) {
+          if (this.response.toString() == "false")
+          {
+            //alert("false entered");
+            document.getElementById("Joyce").style.visibility = "hidden";
+          }
+          else {
+            document.getElementById("Joyce").style.visibility = "visible";
+          }
+        }
+      };
+      michaelClient.send();
+
+      georgeClient.open("GET", 'api/lecturer/availability/Jacobs');
+      georgeClient.onreadystatechange = function() {
+        if (this.readyState === this.DONE) {
+          if (this.response.toString() == "false")
+          {
+            //alert("false entered");
+            document.getElementById("Jacobs").style.visibility = "hidden";
+          }
+          else {
+            document.getElementById("Jacobs").style.visibility = "visible";
+          }
+        }
+      };
+      georgeClient.send();
+    });
+  </script>
 
 <!-- Bootstrap -->
 <link rel="stylesheet" href="css/bootstrap.css"/>
@@ -19,6 +148,11 @@
 </head>
 
 <body>
+<style>
+  .hidden{
+    visibility: hidden;
+  }
+  </style>
 <nav class="navbar navbar-inverse" id="hallo">
   <div class="container"> 
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -91,14 +225,21 @@
     </div>
   </div>
 </footer>
-<script src="VirtualLobby/js/jquery-1.11.2.min.js"></script> 
-<script src="VirtualLobby/js/bootstrap.min.js"></script>
+
+
+
 <script>
   function showAppointmentType(name) {
     localStorage.setItem("advisorName", name);
     window.location.assign("appointmentType.html");
   }
+
+
+
+
+
 </script>
+
 </body>
 </html>
 
